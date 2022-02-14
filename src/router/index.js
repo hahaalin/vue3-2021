@@ -50,6 +50,23 @@ const routes = [
         ]
       }
     ]
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('../views/Login.vue')
+  },
+  {
+    path: '/dashboard',
+    name: 'Dashboard',
+    component: () => import('../views/Dashboard.vue'),
+    children: [{
+      path: 'products',
+      component: () => import(/* webpackChunkName: "about" */ '../views/Products.vue')
+    }, {
+      path: 'coupons',
+      component: () => import('../views/Coupons.vue')
+    }]
   }
 ]
 

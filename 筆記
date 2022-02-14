@@ -1,0 +1,39 @@
+*
+
+npm install vue3-loading-overlay
+
+https://www.npmjs.com/package/vue3-loading-overlay
+
+
+
+
+import Loading from 'vue-loading-overlay';
+import 'vue-loading-overlay/dist/vue-loading.css';
+改路徑
+import Loading from 'vue3-loading-overlay'
+import 'vue3-loading-overlay/dist/vue3-loading-overlay.css'
+
+main.js全域註冊
+
+app.component('Loading', Loading)
+
+選擇要引用的頁面
+
+<loading :active="isLoading"></loading>
+
+  data () {
+    return {
+      isLoading: false
+    }
+  },
+
+  api前寫入
+     this.isLoading = true
+
+  完成後寫入
+        this.isLoading = false
+
+
+*
+npm install mitt 
+
