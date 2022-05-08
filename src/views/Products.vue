@@ -66,8 +66,8 @@ export default {
   methods: {
     // currency,
     openModal (isNew, item) {
-      // console.log(isNew, item)
-      // console.log({ ...item })
+      console.log(isNew, item)
+      console.log({ ...item })
       if (isNew) {
         this.tempProduct = {}
       } else {
@@ -79,8 +79,8 @@ export default {
     },
     openDelProductModal (item) {
       this.tempProduct = { ...item }
-      const delComponent = this.$refs.delModal
-      delComponent.showModal()
+      const delComdelComponent = this.$refs.delModal
+      delComdelComponent.showModal()
     },
     getProducts (page = 1) {
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/products/?page=${page}`
@@ -110,8 +110,8 @@ export default {
       this.$http[httpMethod](api, { data: this.tempProduct }).then((response) => {
         console.log(response)
         this.isLoading = false
+        productComponent.hideModal()
         if (response.data.success) {
-          productComponent.hideModal()
           this.getProducts()
 
           this.emitter.emit('push-message', {

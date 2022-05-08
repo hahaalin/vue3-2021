@@ -25,7 +25,12 @@ export default {
   props: ['pages'],
   methods: {
     updatePage (page) {
-      this.$emit('emit-pages', page)
+      this.$emit('emit-pages', {
+        id: this.event.id,
+        title: this.title,
+        start: this.start,
+        end: this.end
+      })
     }
   }
 }

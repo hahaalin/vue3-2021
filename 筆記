@@ -37,3 +37,11 @@ app.component('Loading', Loading)
 *
 npm install mitt 
 
+npm i bootstrap-icons
+main.js引入
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
+*
+npm i vee-validate --save
+
+npm install @vee-validate/rules
